@@ -14,7 +14,7 @@ social:
   links:
     - https://github.com/blasther12
     - https://www.linkedin.com/in/rafael-oliveira-44b701160/
-logo: /assets/images/avatar.png
+logo: /assets/images/avatar.svg
 permalink: /artigos/:title/
 markdown: kramdown
 highlighter: rouge
