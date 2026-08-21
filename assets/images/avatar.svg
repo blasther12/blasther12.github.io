@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Monograma de Rafael Oliveira</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#111331"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset=".52" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="404" cy="112" r="126" fill="#38bdf8" opacity=".09"/>
+  <circle cx="102" cy="426" r="150" fill="#a78bfa" opacity=".08"/>
+  <path d="M102 352V154h95c53 0 86 27 86 72 0 30-16 53-43 64l56 62h-66l-48-55h-24v55h-56Zm56-103h36c21 0 33-9 33-25 0-17-12-25-33-25h-36v50Z" fill="url(#accent)"/>
+  <path d="M302 352V154h60c59 0 96 37 96 99s-37 99-96 99h-60Zm56-49h7c23 0 37-18 37-50s-14-50-37-50h-7v100Z" fill="#edf6ff"/>
+</svg>
