@@ -32,15 +32,7 @@ permalink: /projetos/
       </article>
 
       <article class="card card--featured">
-        <span class="card__number">03 / DDD & SEGURANÇA</span>
-        <h3>Desafio Luizalabs</h3>
-        <p>API de clientes e produtos favoritos com organização orientada ao domínio, JWT, PostgreSQL e execução em containers.</p>
-        <div class="card__tags"><span>.NET</span><span>DDD</span><span>JWT</span><span>PostgreSQL</span></div>
-        <a class="card__link" href="https://github.com/blasther12/desafio_luizalabs" aria-label="Abrir Desafio Luizalabs no GitHub"></a>
-      </article>
-
-      <article class="card card--featured">
-        <span class="card__number">04 / INTERFACE & FOCO</span>
+        <span class="card__number">03 / INTERFACE & FOCO</span>
         <h3>Chronos Pomodoro</h3>
         <p>Aplicação de produtividade para explorar componentes, estado, experiência de uso e uma interface responsiva.</p>
         <div class="card__tags"><span>React</span><span>TypeScript</span><span>Vite</span></div>
