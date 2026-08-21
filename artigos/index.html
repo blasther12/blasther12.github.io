@@ -1,0 +1,34 @@
+---
+layout: default
+title: Artigos
+description: Artigos sobre arquitetura de software, sistemas distribuídos, observabilidade, cloud e IA.
+permalink: /artigos/
+---
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Artigos</span>
+    <h1>Notas sobre engenharia que precisa durar.</h1>
+    <p>Arquitetura, sistemas distribuídos, observabilidade, cloud, developer experience e IA — sempre com contexto e trade-offs.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if site.posts.size > 0 %}
+      <div class="grid grid--posts">
+        {% for post in site.posts %}
+          <article class="card post-card">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
+            <div class="card__tags">{% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+            <span class="text-link">Ler artigo →</span>
+            <a class="card__link" href="{{ post.url | relative_url }}" aria-label="Ler {{ post.title }}"></a>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state">O primeiro artigo está a caminho.</div>
+    {% endif %}
+  </div>
+</section>
