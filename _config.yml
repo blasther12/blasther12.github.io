@@ -1,0 +1,32 @@
+title: Rafael Oliveira
+tagline: Software Engineer Specialist
+description: Arquitetura de software, sistemas distribuídos, cloud, observabilidade e IA aplicada à engenharia.
+url: https://blasther12.github.io
+baseurl: ""
+lang: pt-BR
+timezone: America/Sao_Paulo
+author:
+  name: Rafael Oliveira
+  email: rafaoli1212@outlook.com
+  url: https://www.linkedin.com/in/rafael-oliveira-44b701160/
+social:
+  name: Rafael Oliveira
+  links:
+    - https://github.com/blasther12
+    - https://www.linkedin.com/in/rafael-oliveira-44b701160/
+logo: /assets/images/avatar.png
+permalink: /artigos/:title/
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+feed:
+  path: feed.xml
+sass:
+  style: compressed
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
