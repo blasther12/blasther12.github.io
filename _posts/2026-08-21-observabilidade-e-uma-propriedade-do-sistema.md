@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Observabilidade é uma propriedade do sistema"
-description: "Logs, métricas e traces só geram valor quando ajudam a formular e responder perguntas sobre o comportamento real do software."
+description: "Ter logs, métricas e traces não basta. O que importa é conseguir responder perguntas quando o sistema se comporta de um jeito que ninguém esperava."
 date: 2026-08-21 08:00:00 -0300
 tags:
   - observabilidade
@@ -10,66 +10,68 @@ tags:
 reading_time: 5
 ---
 
-Adicionar uma ferramenta de monitoramento não torna um sistema observável. A ferramenta coleta sinais; a observabilidade nasce quando o software produz contexto suficiente para que alguém consiga entender estados que não foram previstos antecipadamente.
+Instalar uma ferramenta de monitoramento não torna um sistema observável.
 
-Essa diferença parece semântica, mas muda a forma como instrumentamos e operamos aplicações.
+Parece óbvio quando escrito assim, mas é uma confusão comum. Colocamos dashboards, logs centralizados e tracing no ambiente e damos o assunto como resolvido. A diferença aparece no primeiro incidente em que alguém pergunta “isso está acontecendo com todo mundo ou só com um tipo de operação?” e ninguém consegue responder.
 
-## Monitorar confirma; observar investiga
+É aí que observabilidade deixa de ser uma lista de ferramentas.
 
-Monitoramento responde perguntas conhecidas: a taxa de erro passou do limite? A fila está crescendo? O tempo de resposta aumentou?
+## O teste acontece durante o incidente
 
-Observabilidade também precisa apoiar perguntas que surgem durante o incidente:
+Monitoramento é ótimo para perguntas que já conhecemos. A taxa de erro subiu? A fila aumentou? A latência passou do limite?
 
-- Quais clientes foram afetados?
-- Em que etapa o fluxo ficou mais lento?
-- A falha está associada a uma versão específica?
-- Existe relação com uma dependência externa?
-- O problema acontece apenas em determinada combinação de atributos?
+O problema é que incidentes têm o hábito desagradável de trazer perguntas que ninguém pensou em colocar no dashboard.
 
-Para isso, cada sinal precisa carregar contexto e manter relações com os demais.
+Por exemplo:
 
-## Os três sinais precisam conversar
+- o erro começou depois de uma versão específica?
+- acontece só com um canal ou cliente?
+- o tempo está sendo gasto no nosso serviço ou numa dependência?
+- a mensagem chegou atrasada ou foi processada duas vezes?
+- o fluxo falhou ou só ficou lento?
 
-Logs, métricas e traces cumprem papéis diferentes:
+Se os sinais não carregam contexto suficiente, a investigação vira uma sequência de palpites.
 
-- **Métricas** mostram tendências e ajudam a detectar alterações de comportamento.
-- **Traces** revelam o caminho de uma operação e onde o tempo foi gasto.
-- **Logs** registram detalhes relevantes de eventos específicos.
+## Logs, métricas e traces têm trabalhos diferentes
 
-Separados, eles produzem pistas. Correlacionados por trace IDs, atributos consistentes e convenções compartilhadas, produzem uma narrativa operacional.
+Eu prefiro pensar nos três sinais como peças diferentes da mesma investigação.
 
-O OpenTelemetry é valioso justamente por criar uma linguagem comum de instrumentação e reduzir o acoplamento entre a aplicação e uma ferramenta específica.
+**Métricas** mostram que alguma coisa mudou. São boas para tendência, volume e alerta.
 
-## Contexto com responsabilidade
+**Traces** mostram por onde uma operação passou e onde o tempo foi gasto. Em sistemas com várias dependências, isso economiza bastante adivinhação.
 
-Mais dados não significam necessariamente mais entendimento. Instrumentação sem critérios aumenta custo, ruído e risco de exposição de informações sensíveis.
+**Logs** ajudam quando precisamos olhar um evento específico com mais detalhe.
 
-Algumas perguntas ajudam a selecionar bons atributos:
+O ganho aparece quando eles se conectam. Um alerta aponta uma anomalia, o trace mostra onde ela acontece e o log traz o contexto que faltava. Sem correlação, você acaba com três ferramentas abertas e três histórias diferentes sobre o mesmo problema.
 
-1. Este dado ajuda a segmentar impacto ou investigar uma hipótese?
-2. A cardinalidade é compatível com o tipo de sinal?
-3. Existe informação pessoal, segredo ou payload sensível?
-4. O atributo segue a mesma convenção nos diferentes serviços?
-5. Alguém sabe que decisão tomará quando este sinal mudar?
+É uma das razões pelas quais gosto do OpenTelemetry. Além de evitar acoplamento desnecessário com um vendor, ele ajuda a criar uma forma comum de instrumentar serviços diferentes.
 
-A telemetria deve ser intencional como qualquer outra interface do sistema.
+## Colocar tudo na telemetria também é um problema
 
-## Métricas técnicas e métricas de produto
+Existe o extremo oposto: já que contexto ajuda, vamos mandar tudo.
 
-CPU, memória e latência são importantes, mas nem sempre descrevem impacto. Um serviço pode estar saudável do ponto de vista da infraestrutura e ainda assim falhar em concluir uma operação central do negócio.
+Isso fica caro rápido e ainda cria risco de expor dados que nunca deveriam ter ido para uma plataforma de observabilidade.
 
-Por isso, gosto de conectar sinais técnicos a eventos de produto: processamentos concluídos, operações rejeitadas, itens atrasados, tempo de ciclo e volume por resultado. Essa camada aproxima engenharia e negócio durante a análise de incidentes.
+Antes de adicionar um atributo, costumo pensar em algumas coisas: ele ajuda alguém a investigar ou segmentar impacto? A cardinalidade faz sentido? Tem dado pessoal ou segredo ali? Outros serviços usam o mesmo nome para a mesma coisa?
 
-## O ciclo de melhoria
+Uma regra simples ajuda bastante: se ninguém consegue explicar para que aquele campo serviria numa investigação, talvez ele não precise estar na telemetria.
 
-Observabilidade funciona melhor como um ciclo:
+## Infraestrutura saudável não significa produto saudável
 
-1. instrumentar os fluxos mais importantes;
-2. operar e registrar perguntas difíceis de responder;
-3. melhorar atributos, spans e métricas;
-4. revisar alertas ruidosos ou sem ação;
-5. incorporar o aprendizado ao desenho do sistema.
+CPU, memória e latência continuam importantes, mas elas contam só uma parte da história.
 
-O objetivo não é coletar tudo. É reduzir o tempo entre perceber um comportamento inesperado, compreendê-lo e agir com segurança.
+Um serviço pode responder rápido, consumir pouca memória e ainda falhar completamente naquilo que interessa para o usuário. Por isso, gosto de ter métricas que representem o fluxo de negócio junto das métricas técnicas.
 
-Quando a observabilidade é tratada como propriedade do sistema, confiabilidade deixa de ser apenas reação a incidentes e passa a influenciar a maneira como o software é construído.
+Quantas operações terminaram? Quantas foram rejeitadas? Quantas ficaram presas? Quanto tempo o processo inteiro levou, e não apenas uma chamada HTTP?
+
+Isso muda bastante uma investigação. Em vez de perguntar apenas “o serviço está no ar?”, começamos a perguntar “o sistema está conseguindo fazer o que deveria?”.
+
+## Observabilidade melhora usando o sistema
+
+É difícil acertar toda instrumentação no desenho inicial. Algumas das melhores melhorias aparecem depois de um incidente ou de uma investigação demorada.
+
+Se uma pergunta importante levou duas horas para ser respondida, vale perguntar por que. Faltou um atributo? Um span? Uma métrica de negócio? O log existia, mas não tinha correlação?
+
+Esse aprendizado deveria voltar para o código.
+
+Para mim, é aí que observabilidade vira realmente parte do sistema. Não quando existem muitos dashboards, mas quando a aplicação foi construída de um jeito que permite entender o que ela está fazendo quando alguma coisa sai do roteiro.
