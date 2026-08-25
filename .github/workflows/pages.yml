@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Validate post front matter
         shell: bash
@@ -49,7 +49,8 @@ jobs:
         uses: lycheeverse/lychee-action@v2.8.0
         with:
           workingDirectory: ./_site
-          args: --offline --verbose --no-progress './**/*.html'
+          args: --offline --root-dir "${{ github.workspace }}/_site" --verbose --no-progress './**/*.html'
+          output: /tmp/lychee-results.md
           fail: true
 
       - name: Upload artifact
