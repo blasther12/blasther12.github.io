@@ -14,9 +14,21 @@ permalink: /sobre/
 
 <section class="section">
   <div class="container container--narrow prose">
-    <p>Sou <strong>Engenheiro de Software Especialista</strong> com experiência no desenvolvimento de produtos, plataformas e sistemas distribuídos. Minha trajetória passou por backend, frontend, infraestrutura de aplicações, APIs, arquiteturas orientadas a eventos, cloud, observabilidade, segurança e plataformas internas.</p>
+    <p>Sou <strong>Engenheiro de Software Especialista</strong> com experiência no desenvolvimento e evolução de produtos, plataformas e sistemas distribuídos. Minha trajetória passou por backend, frontend, infraestrutura de aplicações, APIs, arquiteturas orientadas a eventos, cloud, observabilidade, segurança e plataformas internas.</p>
 
-    <p>Atualmente atuo no <strong>Grupo Boticário</strong> em um ecossistema de fidelidade. Combino desenvolvimento hands-on com arquitetura de soluções, análise de trade-offs, definição e evolução de padrões, confiabilidade e apoio técnico aos times.</p>
+    <p>Atualmente atuo no <strong>Grupo Boticário</strong> em um ecossistema de fidelidade. Combino desenvolvimento hands-on com arquitetura de soluções, análise de trade-offs, evolução de padrões, confiabilidade, observabilidade e apoio técnico aos times.</p>
+
+    <h2>Onde procuro gerar impacto</h2>
+
+    <p>Meu trabalho não termina quando uma implementação funciona. Procuro melhorar a capacidade do sistema e do time de continuar evoluindo depois da entrega.</p>
+
+    <ul>
+      <li>tornar decisões arquiteturais e seus trade-offs explícitos;</li>
+      <li>reduzir complexidade acidental em integrações, serviços e fluxos distribuídos;</li>
+      <li>tratar observabilidade e confiabilidade como parte do desenho, não como acabamento;</li>
+      <li>aproximar padrões técnicos da realidade de quem desenvolve e opera o software;</li>
+      <li>usar automação e IA para remover trabalho repetitivo sem terceirizar julgamento técnico.</li>
+    </ul>
 
     <h2>Como penso engenharia</h2>
 
@@ -34,6 +46,7 @@ permalink: /sobre/
       <li>Observabilidade com OpenTelemetry e práticas de confiabilidade</li>
       <li>Cloud, automação e entrega contínua</li>
       <li>LLMs, agentes e IA aplicada ao ciclo de desenvolvimento</li>
+      <li>O impacto humano e organizacional das ferramentas que construímos</li>
     </ul>
 
     <h2>Formação</h2>
@@ -50,14 +63,15 @@ permalink: /sobre/
   <div class="container">
     <header class="section-header">
       <div><span class="eyebrow">Experiência</span><h2>Trajetória profissional</h2></div>
+      <p>As tecnologias mudaram ao longo do caminho. O fio condutor foi aumentar responsabilidade sobre sistemas, decisões e evolução técnica.</p>
     </header>
     <div class="timeline">
-      <div class="timeline__item"><span class="timeline__period">2026 — atual</span><div class="timeline__content"><h3>Grupo Boticário · Developer Specialist I</h3><p>Arquitetura, backend, frontend, integrações, Kafka, SQS, AWS, DynamoDB, OpenTelemetry, CI/CD e IA aplicada à engenharia.</p></div></div>
-      <div class="timeline__item"><span class="timeline__period">2025 — 2026</span><div class="timeline__content"><h3>Luizalabs · Senior Software Engineering</h3><p>Catálogo de alta volumetria com Python, TypeScript, GraphQL, MongoDB, Pub/Sub, GCP e Magalu Cloud.</p></div></div>
-      <div class="timeline__item"><span class="timeline__period">2024 — 2025</span><div class="timeline__content"><h3>Magalu Cloud · Senior Software Engineering</h3><p>Commerce System com Python, Go, PostgreSQL, RabbitMQ, Django, Argo CD e ambientes de alta disponibilidade.</p></div></div>
-      <div class="timeline__item"><span class="timeline__period">2022 — 2024</span><div class="timeline__content"><h3>Luizalabs · Back-end Developer</h3><p>Python, TypeScript, arquitetura de sistemas, Kubernetes, Docker, GCP e experiência de desenvolvedores internos.</p></div></div>
-      <div class="timeline__item"><span class="timeline__period">2020 — 2022</span><div class="timeline__content"><h3>Tray Corp · Full-stack Developer</h3><p>Desenvolvimento e manutenção de sistemas de e-commerce com arquitetura de microsserviços.</p></div></div>
-      <div class="timeline__item"><span class="timeline__period">2018 — 2022</span><div class="timeline__content"><h3>AGSeixas, HNSG e Grupo Positivo</h3><p>.NET, JavaScript, PostgreSQL, APIs REST, microsserviços, SQL, dados e Business Intelligence.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2026 — atual</span><div class="timeline__content"><h3>Grupo Boticário · Developer Specialist I</h3><p>Evolução de arquitetura e observabilidade, integrações distribuídas, confiabilidade, AWS e apoio técnico em um ecossistema de fidelidade.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2025 — 2026</span><div class="timeline__content"><h3>Luizalabs · Senior Software Engineering</h3><p>Evolução de sistemas de catálogo de alta volumetria, APIs e plataformas distribuídas com foco em confiabilidade e capacidade de evolução.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2024 — 2025</span><div class="timeline__content"><h3>Magalu Cloud · Senior Software Engineering</h3><p>Serviços e automações para ambientes de alta disponibilidade, trabalhando com Python, Go, PostgreSQL, mensageria e entrega contínua.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2022 — 2024</span><div class="timeline__content"><h3>Luizalabs · Back-end Developer</h3><p>Backend, arquitetura de sistemas, Kubernetes, Docker, GCP e melhorias na experiência de desenvolvedores internos.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2020 — 2022</span><div class="timeline__content"><h3>Tray Corp · Full-stack Developer</h3><p>Desenvolvimento e manutenção de sistemas de e-commerce em uma arquitetura de serviços distribuídos.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2018 — 2022</span><div class="timeline__content"><h3>AGSeixas, HNSG e Grupo Positivo</h3><p>Base profissional construída entre aplicações web, APIs, bancos relacionais, dados e Business Intelligence.</p></div></div>
     </div>
   </div>
 </section>
