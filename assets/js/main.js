@@ -51,9 +51,21 @@
 
   var filters = document.querySelectorAll('[data-tag-filter]');
   var postCards = document.querySelectorAll('[data-post-tags]');
+  var articleGroups = document.querySelectorAll('[data-article-group]');
 
   function normalizeTag(tag) {
     return String(tag || '').trim().toLowerCase();
+  }
+
+  function updateArticleGroups() {
+    articleGroups.forEach(function (group) {
+      var cards = group.querySelectorAll('[data-post-tags]');
+      var hasVisibleCard = Array.prototype.some.call(cards, function (card) {
+        return !card.hidden;
+      });
+
+      group.hidden = !hasVisibleCard;
+    });
   }
 
   function applyTagFilter(tag) {
@@ -72,6 +84,8 @@
       var tags = normalizeTag(card.getAttribute('data-post-tags')).split(' ').filter(Boolean);
       card.hidden = selected !== 'todos' && tags.indexOf(selected) === -1;
     });
+
+    updateArticleGroups();
   }
 
   if (filters.length && postCards.length) {
