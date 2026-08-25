@@ -16,10 +16,10 @@ permalink: /artigos/
   <div class="container">
     {% if site.posts.size > 0 %}
       <div class="tag-filters" aria-label="Filtrar artigos por tema">
-        <button class="tag-filter" type="button" data-tag-filter="todos" aria-pressed="true">Todos</button>
+        <button class="tag-filter" id="tag-todos" type="button" data-tag-filter="todos" aria-pressed="true">Todos</button>
         {% assign sorted_tags = site.tags | sort %}
         {% for tag in sorted_tags %}
-          <button class="tag-filter" type="button" data-tag-filter="{{ tag[0] | slugify }}" aria-pressed="false">{{ tag[0] }}</button>
+          <button class="tag-filter" id="tag-{{ tag[0] | slugify }}" type="button" data-tag-filter="{{ tag[0] | slugify }}" aria-pressed="false">{{ tag[0] }}</button>
         {% endfor %}
       </div>
 
