@@ -13,7 +13,7 @@ layout: default
       {% if page.reading_time %}<span>{{ page.reading_time }} min de leitura</span>{% endif %}
       {% if page.tags %}
         <span class="post__tags">
-          {% for tag in page.tags %}<span>#{{ tag }}</span>{% endfor %}
+          {% for tag in page.tags %}<a href="{{ '/artigos/' | relative_url }}#tag-{{ tag | slugify }}">#{{ tag }}</a>{% endfor %}
         </span>
       {% endif %}
     </div>
@@ -23,12 +23,50 @@ layout: default
     {{ content }}
   </div>
 
+  {% if site.related_posts.size > 0 %}
+    <section class="post__related container container--narrow" aria-labelledby="continue-lendo">
+      <header class="post__related-header">
+        <span class="eyebrow">Continue lendo</span>
+        <h2 id="continue-lendo">Outras ideias do blog</h2>
+      </header>
+      <div class="related-grid">
+        {% for post in site.related_posts limit:2 %}
+          <a class="related-card" href="{{ post.url | relative_url }}">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+            <h3>{{ post.title }}</h3>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.previous or page.next %}
+    <nav class="post__navigation container container--narrow" aria-label="Navegação entre artigos">
+      {% if page.previous %}
+        <a class="post-nav-link" href="{{ page.previous.url | relative_url }}">
+          <span>← Anterior</span>
+          <strong>{{ page.previous.title }}</strong>
+        </a>
+      {% else %}<span></span>{% endif %}
+
+      {% if page.next %}
+        <a class="post-nav-link post-nav-link--next" href="{{ page.next.url | relative_url }}">
+          <span>Próximo →</span>
+          <strong>{{ page.next.title }}</strong>
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
+
   <footer class="post__footer container container--narrow">
     <div>
       <span class="eyebrow">Continue a conversa</span>
       <h2>Alguma ideia ou contraponto?</h2>
-      <p>Gosto de discutir decisões de engenharia, contexto e trade-offs.</p>
+      <p>Acompanhe os próximos textos pelo RSS ou converse comigo no LinkedIn.</p>
     </div>
-    <a class="button button--primary" href="https://www.linkedin.com/in/rafael-oliveira-44b701160/">Conversar no LinkedIn</a>
+    <div class="post__footer-actions">
+      <a class="button button--ghost" href="{{ '/feed.xml' | relative_url }}">Assinar RSS</a>
+      <a class="button button--primary" href="https://www.linkedin.com/in/rafael-oliveira-44b701160/">Conversar no LinkedIn</a>
+    </div>
   </footer>
 </article>
