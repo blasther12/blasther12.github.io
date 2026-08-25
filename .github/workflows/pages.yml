@@ -22,6 +22,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate post front matter
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in _posts/*.md; do
+            for field in layout title description date tags reading_time; do
+              if ! grep -q "^${field}:" "$file"; then
+                echo "Missing required front matter field '${field}' in ${file}"
+                exit 1
+              fi
+            done
+          done
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -31,6 +44,13 @@ jobs:
         with:
           source: ./
           destination: ./_site
+
+      - name: Check internal links
+        uses: lycheeverse/lychee-action@v2.8.0
+        with:
+          workingDirectory: ./_site
+          args: --offline --verbose --no-progress './**/*.html'
+          fail: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
