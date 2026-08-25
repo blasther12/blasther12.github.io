@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="post">
   <header class="post__header container container--narrow">
-    <a class="eyebrow link-back" href="{{ '/artigos/' | relative_url }}">← Todos os artigos</a>
+    <a class="eyebrow link-back" href="{{ '/artigos/' | relative_url }}">← Artigos</a>
     <h1>{{ page.title }}</h1>
     {% if page.description %}
       <p class="post__lead">{{ page.description }}</p>
@@ -26,8 +26,8 @@ layout: default
   {% if site.related_posts.size > 0 %}
     <section class="post__related container container--narrow" aria-labelledby="continue-lendo">
       <header class="post__related-header">
-        <span class="eyebrow">Continue lendo</span>
-        <h2 id="continue-lendo">Outras ideias do blog</h2>
+        <span class="eyebrow">Mais textos</span>
+        <h2 id="continue-lendo">Se quiser continuar por aqui</h2>
       </header>
       <div class="related-grid">
         {% for post in site.related_posts limit:2 %}
@@ -60,13 +60,13 @@ layout: default
 
   <footer class="post__footer container container--narrow">
     <div>
-      <span class="eyebrow">Continue a conversa</span>
-      <h2>Alguma ideia ou contraponto?</h2>
-      <p>Acompanhe os próximos textos pelo RSS ou converse comigo no LinkedIn.</p>
+      <span class="eyebrow">Contato</span>
+      <h2>Discordou de alguma coisa?</h2>
+      <p>Pode me chamar no LinkedIn. Para acompanhar os próximos textos, também tem RSS.</p>
     </div>
     <div class="post__footer-actions">
-      <a class="button button--ghost" href="{{ '/feed.xml' | relative_url }}">Assinar RSS</a>
-      <a class="button button--primary" href="https://www.linkedin.com/in/rafael-oliveira-44b701160/">Conversar no LinkedIn</a>
+      <a class="button button--ghost" href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a class="button button--primary" href="https://www.linkedin.com/in/rafael-oliveira-44b701160/">LinkedIn</a>
     </div>
   </footer>
 </article>
