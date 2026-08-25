@@ -4,7 +4,7 @@
       <span>RO</span><i>.</i>
     </a>
 
-    <nav class="nav" aria-label="Navegação principal">
+    <nav class="nav" id="primary-navigation" aria-label="Navegação principal">
       <a href="{{ '/' | relative_url }}">Início</a>
       <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
       <a href="{{ '/projetos/' | relative_url }}">Projetos</a>
@@ -12,6 +12,7 @@
     </nav>
 
     <div class="nav-actions">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <button class="theme-toggle" type="button" aria-label="Alternar tema" title="Alternar tema">
         <span class="theme-toggle__sun" aria-hidden="true">☀</span>
         <span class="theme-toggle__moon" aria-hidden="true">☾</span>
