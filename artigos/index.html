@@ -8,7 +8,7 @@ permalink: /artigos/
   <div class="container">
     <span class="eyebrow">Artigos</span>
     <h1>Coisas que tenho pensado sobre software.</h1>
-    <p>Escrevo principalmente sobre arquitetura, sistemas distribuídos, observabilidade, IA e carreira. Nem sempre para chegar a uma resposta fechada.</p>
+    <p>Organizei os textos por assunto para ficar mais fácil seguir uma linha de leitura. As tags continuam disponíveis para filtrar temas mais específicos.</p>
   </div>
 </section>
 
@@ -23,17 +23,72 @@ permalink: /artigos/
         {% endfor %}
       </div>
 
-      <div class="grid grid--posts">
-        {% for post in site.posts %}
-          <article class="card post-card" data-post-tags="{% for tag in post.tags %}{{ tag | slugify }} {% endfor %}">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
-            <div class="card__tags">{% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}</div>
-            <span class="text-link">Ler →</span>
-            <a class="card__link" href="{{ post.url | relative_url }}" aria-label="Ler {{ post.title }}"></a>
-          </article>
-        {% endfor %}
+      <div class="article-groups">
+        <section class="article-group" data-article-group>
+          <header class="article-group__header">
+            <span class="eyebrow">IA, carreira e trabalho</span>
+            <h2>O lado humano de trabalhar com tecnologia</h2>
+            <p>IA, aprendizado, carreira e as pressões que aparecem junto com uma profissão que muda rápido.</p>
+          </header>
+          <div class="grid grid--posts">
+            {% for post in site.posts %}
+              {% if post.tags contains 'inteligencia-artificial' or post.tags contains 'carreira' or post.tags contains 'saude-mental' %}
+                <article class="card post-card" data-post-tags="{% for tag in post.tags %}{{ tag | slugify }} {% endfor %}">
+                  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+                  <h3>{{ post.title }}</h3>
+                  <p>{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
+                  <div class="card__tags">{% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+                  <span class="text-link">Ler →</span>
+                  <a class="card__link" href="{{ post.url | relative_url }}" aria-label="Ler {{ post.title }}"></a>
+                </article>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="article-group" data-article-group>
+          <header class="article-group__header">
+            <span class="eyebrow">Arquitetura e sistemas distribuídos</span>
+            <h2>Escolhas que aparecem quando o sistema cresce</h2>
+            <p>Distribuição, consistência, comunicação entre serviços e os custos que acompanham decisões de arquitetura.</p>
+          </header>
+          <div class="grid grid--posts">
+            {% for post in site.posts %}
+              {% if post.tags contains 'arquitetura' or post.tags contains 'sistemas-distribuidos' or post.tags contains 'trade-offs' %}
+                <article class="card post-card" data-post-tags="{% for tag in post.tags %}{{ tag | slugify }} {% endfor %}">
+                  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+                  <h3>{{ post.title }}</h3>
+                  <p>{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
+                  <div class="card__tags">{% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+                  <span class="text-link">Ler →</span>
+                  <a class="card__link" href="{{ post.url | relative_url }}" aria-label="Ler {{ post.title }}"></a>
+                </article>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="article-group" data-article-group>
+          <header class="article-group__header">
+            <span class="eyebrow">Observabilidade e confiabilidade</span>
+            <h2>Entender o que acontece depois do deploy</h2>
+            <p>Instrumentação, operação, investigação de incidentes e sistemas que explicam melhor o próprio comportamento.</p>
+          </header>
+          <div class="grid grid--posts">
+            {% for post in site.posts %}
+              {% if post.tags contains 'observabilidade' or post.tags contains 'opentelemetry' or post.tags contains 'confiabilidade' %}
+                <article class="card post-card" data-post-tags="{% for tag in post.tags %}{{ tag | slugify }} {% endfor %}">
+                  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+                  <h3>{{ post.title }}</h3>
+                  <p>{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
+                  <div class="card__tags">{% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+                  <span class="text-link">Ler →</span>
+                  <a class="card__link" href="{{ post.url | relative_url }}" aria-label="Ler {{ post.title }}"></a>
+                </article>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
       </div>
     {% else %}
       <div class="empty-state">Ainda não publiquei nenhum artigo.</div>
