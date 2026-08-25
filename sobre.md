@@ -1,53 +1,40 @@
 ---
 layout: default
 title: Sobre
-description: Trajetória, princípios e experiência profissional de Rafael Oliveira.
+description: Trajetória, experiência profissional e a forma como Rafael Oliveira trabalha com engenharia de software.
 permalink: /sobre/
 ---
 <section class="page-hero">
   <div class="container container--narrow">
     <span class="eyebrow">Sobre</span>
-    <h1>Código é parte do trabalho. Contexto é o que dá direção.</h1>
-    <p>Atuo entre desenvolvimento, arquitetura e influência técnica para ajudar times a construir sistemas mais simples, confiáveis, observáveis e sustentáveis.</p>
+    <h1>Um pouco sobre como eu trabalho.</h1>
+    <p>Sou engenheiro de software especialista e gosto de ficar perto do código sem perder de vista o que acontece em volta dele: domínio, operação, custo, time e manutenção.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container container--narrow prose">
-    <p>Sou <strong>Engenheiro de Software Especialista</strong> com experiência no desenvolvimento e evolução de produtos, plataformas e sistemas distribuídos. Minha trajetória passou por backend, frontend, infraestrutura de aplicações, APIs, arquiteturas orientadas a eventos, cloud, observabilidade, segurança e plataformas internas.</p>
+    <p>Trabalho com software desde 2018. Nesse tempo passei por backend, frontend, APIs, cloud, mensageria, observabilidade, plataformas internas e sistemas distribuídos. Hoje atuo como <strong>Developer Specialist I no Grupo Boticário</strong>, em um ecossistema de fidelidade.</p>
 
-    <p>Atualmente atuo no <strong>Grupo Boticário</strong> em um ecossistema de fidelidade. Combino desenvolvimento hands-on com arquitetura de soluções, análise de trade-offs, evolução de padrões, confiabilidade, observabilidade e apoio técnico aos times.</p>
+    <p>Meu trabalho mistura implementação com decisões de arquitetura, investigação de problemas, revisão de soluções e apoio técnico aos times. Gosto especialmente de situações em que não existe uma resposta óbvia e é preciso entender bem o contexto antes de escolher uma tecnologia.</p>
 
-    <h2>Onde procuro gerar impacto</h2>
+    <h2>O que costumo olhar em uma solução</h2>
 
-    <p>Meu trabalho não termina quando uma implementação funciona. Procuro melhorar a capacidade do sistema e do time de continuar evoluindo depois da entrega.</p>
-
-    <ul>
-      <li>tornar decisões arquiteturais e seus trade-offs explícitos;</li>
-      <li>reduzir complexidade acidental em integrações, serviços e fluxos distribuídos;</li>
-      <li>tratar observabilidade e confiabilidade como parte do desenho, não como acabamento;</li>
-      <li>aproximar padrões técnicos da realidade de quem desenvolve e opera o software;</li>
-      <li>usar automação e IA para remover trabalho repetitivo sem terceirizar julgamento técnico.</li>
-    </ul>
-
-    <h2>Como penso engenharia</h2>
-
-    <p>Uma decisão técnica só faz sentido dentro do seu contexto. Antes de escolher uma tecnologia, procuro entender o problema, as restrições do sistema, as capacidades do time, os riscos operacionais e o custo de evolução.</p>
-
-    <blockquote>Arquitetura não é um diagrama congelado. É o conjunto de decisões que torna um sistema capaz de continuar mudando.</blockquote>
-
-    <p>Gosto de permanecer próximo do código, mas também atuar além dele: questionando decisões, conectando pontos, propondo melhorias e criando condições para que outras pessoas façam um trabalho melhor.</p>
-
-    <h2>Interesses atuais</h2>
+    <p>Quando avalio uma decisão técnica, tento ir além de “funciona ou não funciona”. Algumas perguntas que normalmente aparecem são:</p>
 
     <ul>
-      <li>Sistemas distribuídos e arquiteturas orientadas a eventos</li>
-      <li>Developer experience e engenharia de plataforma</li>
-      <li>Observabilidade com OpenTelemetry e práticas de confiabilidade</li>
-      <li>Cloud, automação e entrega contínua</li>
-      <li>LLMs, agentes e IA aplicada ao ciclo de desenvolvimento</li>
-      <li>O impacto humano e organizacional das ferramentas que construímos</li>
+      <li>o problema está bem entendido ou estamos começando pela ferramenta?</li>
+      <li>qual complexidade essa solução adiciona para o time que vai mantê-la?</li>
+      <li>como vamos saber que ela está funcionando em produção?</li>
+      <li>o que acontece quando uma dependência falha, atrasa ou responde duas vezes?</li>
+      <li>esse desenho ainda faz sentido se o produto crescer ou mudar de direção?</li>
     </ul>
+
+    <p>Nem toda solução precisa ser sofisticada. Muitas vezes, a melhor decisão é justamente evitar uma camada, um serviço ou uma abstração que ainda não se justificam.</p>
+
+    <h2>Assuntos que tenho estudado</h2>
+
+    <p>Ultimamente tenho dedicado mais atenção a sistemas distribuídos, arquiteturas orientadas a eventos, OpenTelemetry, engenharia de plataforma, cloud e IA aplicada ao desenvolvimento de software. Também me interessa bastante o efeito dessas ferramentas no jeito como os times trabalham e tomam decisões.</p>
 
     <h2>Formação</h2>
 
@@ -63,15 +50,15 @@ permalink: /sobre/
   <div class="container">
     <header class="section-header">
       <div><span class="eyebrow">Experiência</span><h2>Trajetória profissional</h2></div>
-      <p>As tecnologias mudaram ao longo do caminho. O fio condutor foi aumentar responsabilidade sobre sistemas, decisões e evolução técnica.</p>
+      <p>As tecnologias mudaram bastante de um trabalho para outro. A responsabilidade sobre os sistemas foi aumentando junto.</p>
     </header>
     <div class="timeline">
-      <div class="timeline__item"><span class="timeline__period">2026 — atual</span><div class="timeline__content"><h3>Grupo Boticário · Developer Specialist I</h3><p>Evolução de arquitetura e observabilidade, integrações distribuídas, confiabilidade, AWS e apoio técnico em um ecossistema de fidelidade.</p></div></div>
-      <div class="timeline__item"><span class="timeline__period">2025 — 2026</span><div class="timeline__content"><h3>Luizalabs · Senior Software Engineering</h3><p>Evolução de sistemas de catálogo de alta volumetria, APIs e plataformas distribuídas com foco em confiabilidade e capacidade de evolução.</p></div></div>
-      <div class="timeline__item"><span class="timeline__period">2024 — 2025</span><div class="timeline__content"><h3>Magalu Cloud · Senior Software Engineering</h3><p>Serviços e automações para ambientes de alta disponibilidade, trabalhando com Python, Go, PostgreSQL, mensageria e entrega contínua.</p></div></div>
-      <div class="timeline__item"><span class="timeline__period">2022 — 2024</span><div class="timeline__content"><h3>Luizalabs · Back-end Developer</h3><p>Backend, arquitetura de sistemas, Kubernetes, Docker, GCP e melhorias na experiência de desenvolvedores internos.</p></div></div>
-      <div class="timeline__item"><span class="timeline__period">2020 — 2022</span><div class="timeline__content"><h3>Tray Corp · Full-stack Developer</h3><p>Desenvolvimento e manutenção de sistemas de e-commerce em uma arquitetura de serviços distribuídos.</p></div></div>
-      <div class="timeline__item"><span class="timeline__period">2018 — 2022</span><div class="timeline__content"><h3>AGSeixas, HNSG e Grupo Positivo</h3><p>Base profissional construída entre aplicações web, APIs, bancos relacionais, dados e Business Intelligence.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2026 — atual</span><div class="timeline__content"><h3>Grupo Boticário · Developer Specialist I</h3><p>Sistemas distribuídos, observabilidade, integrações, AWS e decisões de arquitetura em um ecossistema de fidelidade.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2025 — 2026</span><div class="timeline__content"><h3>Luizalabs · Senior Software Engineering</h3><p>Sistemas de catálogo de alta volumetria, APIs e serviços distribuídos com Python, TypeScript e GraphQL.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2024 — 2025</span><div class="timeline__content"><h3>Magalu Cloud · Senior Software Engineering</h3><p>Serviços e automações para ambientes de alta disponibilidade usando Python, Go, PostgreSQL, mensageria e Argo CD.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2022 — 2024</span><div class="timeline__content"><h3>Luizalabs · Back-end Developer</h3><p>Backend, Kubernetes, Docker, GCP, arquitetura de sistemas e ferramentas usadas por outros desenvolvedores.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2020 — 2022</span><div class="timeline__content"><h3>Tray Corp · Full-stack Developer</h3><p>Desenvolvimento e manutenção de sistemas de e-commerce em uma arquitetura de serviços.</p></div></div>
+      <div class="timeline__item"><span class="timeline__period">2018 — 2022</span><div class="timeline__content"><h3>AGSeixas, HNSG e Grupo Positivo</h3><p>Aplicações web, APIs, bancos relacionais, dados e Business Intelligence.</p></div></div>
     </div>
   </div>
 </section>
