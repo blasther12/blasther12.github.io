@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Projetos
-description: Estudos de caso e projetos selecionados de Rafael Oliveira.
+description: Projetos pessoais de Rafael Oliveira, com contexto sobre as decisões técnicas de cada um.
 permalink: /projetos/
 ---
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">Projetos</span>
-    <h1>Decisões de engenharia transformadas em sistemas.</h1>
-    <p>Mais do que stacks, estes projetos exploram domínio, arquitetura, trade-offs, qualidade e evolução de software.</p>
+    <h1>Projetos pessoais que uso para estudar e experimentar.</h1>
+    <p>Além do código, deixei um pouco do raciocínio por trás de cada projeto: o problema que eu queria resolver, a decisão que tomei e o preço dessa escolha.</p>
   </div>
 </section>
 
@@ -18,16 +18,16 @@ permalink: /projetos/
       <article class="case-study">
         <div class="case-study__head">
           <div>
-            <span class="eyebrow">Produto & domínio</span>
+            <span class="eyebrow">Finanças</span>
             <h2>Finora</h2>
-            <p class="case-study__summary">Gerenciador financeiro pessoal que modela orçamento, cartões, faturas, recorrências e projeções como partes de um mesmo domínio, evitando a abordagem de CRUD desconectado.</p>
+            <p class="case-study__summary">Comecei o Finora para organizar finanças pessoais sem tratar cartão, fatura, recorrência e projeção como cadastros independentes.</p>
           </div>
           <a class="button button--ghost" href="https://github.com/blasther12/finora">GitHub</a>
         </div>
         <div class="case-study__details">
-          <div><strong>Problema</strong><p>Representar estado financeiro atual e futuro sem perder precisão monetária ou coerência entre lançamentos.</p></div>
-          <div><strong>Decisão</strong><p>Monorepo com contratos compartilhados e regras de domínio explícitas entre Next.js, NestJS e PostgreSQL.</p></div>
-          <div><strong>Trade-off</strong><p>Manter uma arquitetura simples de operar, mas com fronteiras suficientes para o domínio crescer sem espalhar regras pelo frontend.</p></div>
+          <div><strong>O problema</strong><p>Representar o que já aconteceu e o que ainda vai acontecer sem perder coerência entre lançamentos, faturas e orçamento.</p></div>
+          <div><strong>O caminho</strong><p>Usei Next.js, NestJS e PostgreSQL em um monorepo, mantendo as regras financeiras no domínio em vez de espalhá-las pela interface.</p></div>
+          <div><strong>O preço</strong><p>Há mais modelagem no começo, mas isso evita que regras importantes acabem duplicadas em telas, controllers e jobs.</p></div>
         </div>
         <div class="card__tags"><span>Next.js</span><span>NestJS</span><span>PostgreSQL</span><span>Prisma</span><span>DDD</span><span>Docker</span></div>
       </article>
@@ -35,16 +35,16 @@ permalink: /projetos/
       <article class="case-study">
         <div class="case-study__head">
           <div>
-            <span class="eyebrow">Conhecimento & arquitetura</span>
+            <span class="eyebrow">Estudos</span>
             <h2>Alexandria</h2>
-            <p class="case-study__summary">Uma biblioteca open source de Engenharia de Software em português, construída para conectar fundamentos, prática deliberada, decisões arquiteturais e referências confiáveis.</p>
+            <p class="case-study__summary">O Alexandria nasceu porque minhas referências de estudo estavam espalhadas demais. A ideia foi montar um lugar em que assuntos se conectam e existe uma ordem razoável para estudá-los.</p>
           </div>
           <a class="button button--ghost" href="https://github.com/blasther12/alexandria">GitHub</a>
         </div>
         <div class="case-study__details">
-          <div><strong>Problema</strong><p>Evitar que estudos de tecnologia virem listas de ferramentas sem contexto, dependências ou critérios de progressão.</p></div>
-          <div><strong>Decisão</strong><p>Organizar o conhecimento em Atlas, trilhas, níveis, projetos e referências, conectando conceitos antes de tecnologias.</p></div>
-          <div><strong>Trade-off</strong><p>Priorizar profundidade e curadoria em vez de cobertura superficial de toda novidade que surge no ecossistema.</p></div>
+          <div><strong>O problema</strong><p>Uma lista enorme de ferramentas não ajuda muito quando falta contexto sobre o que aprender primeiro e por quê.</p></div>
+          <div><strong>O caminho</strong><p>Organizei o material em trilhas, níveis, projetos e referências, conectando fundamentos a assuntos como arquitetura, cloud e IA.</p></div>
+          <div><strong>O preço</strong><p>Prefiro deixar alguns assuntos de fora a manter conteúdo raso só para acompanhar toda novidade que aparece.</p></div>
         </div>
         <div class="card__tags"><span>Open source</span><span>Architecture</span><span>Distributed Systems</span><span>Cloud</span><span>AI Engineering</span></div>
       </article>
@@ -52,23 +52,23 @@ permalink: /projetos/
 
     <div class="project-labs">
       <header class="section-header">
-        <div><span class="eyebrow">Laboratório</span><h2>Outros projetos públicos</h2></div>
-        <p>Projetos menores usados para exercitar implementação, qualidade, interface e diferentes ecossistemas.</p>
+        <div><span class="eyebrow">Outros</span><h2>Projetos menores</h2></div>
+        <p>Alguns repositórios que usei para testar ideias, bibliotecas ou tecnologias específicas.</p>
       </header>
 
       <div class="grid grid--projects">
         <article class="card card--featured">
           <span class="card__number">API & TESTES</span>
           <h3>Products Service</h3>
-          <p>API de produtos com validações de domínio, persistência relacional, documentação e cobertura de testes.</p>
+          <p>Uma API de produtos em .NET com PostgreSQL, documentação e testes automatizados.</p>
           <div class="card__tags"><span>.NET 8</span><span>EF Core</span><span>PostgreSQL</span><span>Docker</span></div>
           <a class="card__link" href="https://github.com/blasther12/products" aria-label="Abrir Products Service no GitHub"></a>
         </article>
 
         <article class="card card--featured">
-          <span class="card__number">INTERFACE & FOCO</span>
+          <span class="card__number">FRONTEND</span>
           <h3>Chronos Pomodoro</h3>
-          <p>Aplicação de produtividade para explorar componentes, estado, experiência de uso e interface responsiva.</p>
+          <p>Um Pomodoro feito com React e TypeScript para explorar componentes, estado e uma interface responsiva.</p>
           <div class="card__tags"><span>React</span><span>TypeScript</span><span>Vite</span></div>
           <a class="card__link" href="https://github.com/blasther12/chronos-pomodoro" aria-label="Abrir Chronos Pomodoro no GitHub"></a>
         </article>
