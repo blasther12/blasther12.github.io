@@ -1,0 +1,26 @@
+{
+  "spaces": [
+    {
+      "id": "blog",
+      "name": "Blog",
+      "category": "Engenharia de Software",
+      "description": "Artigos, projetos e notas sobre arquitetura, sistemas distribuídos, observabilidade, cloud, IA e as decisões por trás do código.",
+      "href": "/blog/",
+      "action": "Entrar no blog",
+      "icon": "{ }",
+      "accent": "blue",
+      "tags": ["Arquitetura", "Software", "IA"]
+    },
+    {
+      "id": "cliofera",
+      "name": "Cliofera",
+      "category": "Faculdade Livre de História",
+      "description": "Currículo autodirigido de História com cronologia, fontes, historiografia, literatura, debates, imagens, vídeos e produção acadêmica.",
+      "href": "https://blasther12.github.io/cliofera/",
+      "action": "Entrar na Cliofera",
+      "iconImage": "https://blasther12.github.io/cliofera/icons/cliofera-mark.svg",
+      "accent": "gold",
+      "tags": ["História", "Estudo", "Pesquisa"]
+    }
+  ]
+}
