@@ -22,6 +22,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Generate portal PWA icons
+        run: |
+          python -m pip install --disable-pip-version-check cairosvg
+          python scripts/generate_portal_icons.py
+          test -s assets/images/portal-icon-192.png
+          test -s assets/images/portal-icon-512.png
+          test -s assets/images/portal-apple-touch-icon.png
+
       - name: Validate post front matter
         shell: bash
         run: |
@@ -34,6 +42,8 @@ jobs:
               fi
             done
           done
+          python -m json.tool spaces.json > /dev/null
+          python -m json.tool manifest.webmanifest > /dev/null
 
       - name: Setup Pages
         id: pages

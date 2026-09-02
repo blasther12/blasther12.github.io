@@ -14,13 +14,24 @@
     {
       "id": "cliofera",
       "name": "Cliofera",
-      "category": "Faculdade Livre de História",
-      "description": "Currículo autodirigido de História com cronologia, fontes, historiografia, literatura, debates, imagens, vídeos e produção acadêmica.",
+      "category": "História",
+      "description": "Formação autodirigida em História com cronologia, fontes, historiografia, literatura, debates, imagens, vídeos e pesquisa.",
       "href": "https://blasther12.github.io/cliofera/",
       "action": "Entrar na Cliofera",
       "iconImage": "https://blasther12.github.io/cliofera/icons/cliofera-mark.svg",
       "accent": "gold",
-      "tags": ["História", "Estudo", "Pesquisa"]
+      "tags": ["História", "Fontes", "Pesquisa"]
+    },
+    {
+      "id": "alexandria",
+      "name": "Alexandria",
+      "category": "Tecnologia e Engenharia",
+      "description": "Biblioteca temática para aprofundar fundamentos, linguagens, arquitetura, sistemas distribuídos, dados, cloud, APIs, observabilidade, segurança e IA.",
+      "href": "https://blasther12.github.io/alexandria/",
+      "action": "Explorar Alexandria",
+      "iconImage": "https://blasther12.github.io/alexandria/icons/alexandria-mark.svg",
+      "accent": "green",
+      "tags": ["Software", "Cloud", "IA", "Arquitetura"]
     }
   ]
 }
