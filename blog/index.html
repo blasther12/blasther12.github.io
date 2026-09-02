@@ -1,0 +1,133 @@
+---
+layout: default
+title: Início
+permalink: /blog/
+description: Rafael Oliveira, engenheiro de software especialista. Projetos e textos sobre sistemas distribuídos, arquitetura, observabilidade, cloud e IA.
+---
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <span class="eyebrow">Software Engineer Specialist</span>
+      <h1>Eu construo software e escrevo sobre <span>as decisões por trás dele.</span></h1>
+      <p class="hero__lead">
+        Trabalho com backend, frontend e plataforma, principalmente em sistemas distribuídos.
+        Aqui reúno projetos pessoais, estudos e textos sobre arquitetura, observabilidade, cloud e IA.
+      </p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="{{ '/projetos/' | relative_url }}">Ver projetos →</a>
+        <a class="button button--ghost" href="{{ '/artigos/' | relative_url }}">Ler artigos</a>
+      </div>
+      <div class="hero__signals" aria-label="Áreas de atuação">
+        <span class="signal">distributed_systems</span>
+        <span class="signal">software_architecture</span>
+        <span class="signal">observability</span>
+        <span class="signal">cloud</span>
+        <span class="signal">ai_engineering</span>
+      </div>
+    </div>
+
+    <aside class="profile-card" aria-label="Perfil profissional">
+      <div class="profile-card__image">
+        <img src="{{ '/assets/images/profile-photo.png' | relative_url }}" alt="Rafael Oliveira" width="640" height="640">
+      </div>
+      <div class="profile-card__body">
+        <span class="profile-card__status">Projetos pessoais + engenharia no dia a dia</span>
+        <h2>Rafael Oliveira</h2>
+        <p>Developer Specialist I · Grupo Boticário</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="container" aria-label="Resumo profissional">
+  <div class="stats">
+    <div class="stat"><strong>Desde 2018</strong><span>trabalhando com desenvolvimento de software</span></div>
+    <div class="stat"><strong>Full stack</strong><span>backend, frontend e plataforma</span></div>
+    <div class="stat"><strong>Sem receita pronta</strong><span>a escolha técnica depende do problema</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section-header">
+      <div>
+        <span class="eyebrow">Projetos</span>
+        <h2>Algumas coisas que estou construindo</h2>
+      </div>
+      <a class="text-link" href="{{ '/projetos/' | relative_url }}">Ver todos →</a>
+    </header>
+
+    <div class="grid grid--projects">
+      <article class="card card--featured">
+        <span class="card__number">01 / FINANÇAS</span>
+        <h3>Finora</h3>
+        <p>Um gerenciador financeiro pessoal em que orçamento, faturas, recorrências e projeções fazem parte do mesmo domínio.</p>
+        <div class="card__tags"><span>Next.js</span><span>NestJS</span><span>PostgreSQL</span><span>DDD</span></div>
+        <a class="card__link" href="https://github.com/blasther12/finora" aria-label="Abrir projeto Finora"></a>
+      </article>
+
+      <article class="card card--featured">
+        <span class="card__number">02 / ESTUDOS</span>
+        <h3>Alexandria</h3>
+        <p>Meu repositório aberto de estudos de Engenharia de Software, com trilhas, referências e material sobre arquitetura, sistemas distribuídos, cloud e IA.</p>
+        <div class="card__tags"><span>Open source</span><span>Architecture</span><span>Roadmaps</span><span>AI Engineering</span></div>
+        <a class="card__link" href="https://github.com/blasther12/alexandria" aria-label="Abrir projeto Alexandria"></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tinted">
+  <div class="container">
+    <header class="section-header">
+      <div>
+        <span class="eyebrow">Blog</span>
+        <h2>Últimos textos</h2>
+      </div>
+      <a class="text-link" href="{{ '/artigos/' | relative_url }}">Ver todos →</a>
+    </header>
+
+    <div class="grid grid--posts">
+      {% for post in site.posts limit:3 %}
+        <article class="card post-card">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.description | default: post.excerpt | strip_html | truncate: 135 }}</p>
+          <span class="text-link">Ler artigo →</span>
+          <a class="card__link" href="{{ post.url | relative_url }}" aria-label="Ler {{ post.title }}"></a>
+        </article>
+      {% else %}
+        <div class="empty-state">Ainda não publiquei nenhum artigo.</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section-header">
+      <div>
+        <span class="eyebrow">Experiência</span>
+        <h2>Onde trabalhei nos últimos anos</h2>
+      </div>
+      <p>Minha atuação foi ficando menos presa a uma camada específica e mais próxima das decisões sobre o sistema como um todo.</p>
+    </header>
+
+    <div class="timeline">
+      <div class="timeline__item">
+        <span class="timeline__period">2026 — atual</span>
+        <div class="timeline__content"><h3>Developer Specialist I · Grupo Boticário</h3><p>Sistemas distribuídos, observabilidade, AWS, integrações e decisões de arquitetura em um ecossistema de fidelidade.</p></div>
+      </div>
+      <div class="timeline__item">
+        <span class="timeline__period">2025 — 2026</span>
+        <div class="timeline__content"><h3>Senior Software Engineering · Luizalabs</h3><p>Sistemas de catálogo de alta volumetria usando Python, TypeScript, GraphQL e serviços distribuídos.</p></div>
+      </div>
+      <div class="timeline__item">
+        <span class="timeline__period">2024 — 2025</span>
+        <div class="timeline__content"><h3>Senior Software Engineering · Magalu Cloud</h3><p>Serviços em Python e Go, alta disponibilidade e automação de entrega com Argo CD.</p></div>
+      </div>
+    </div>
+
+    <a class="text-link" href="{{ '/sobre/' | relative_url }}">Ver trajetória completa →</a>
+  </div>
+</section>
