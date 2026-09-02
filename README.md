@@ -5,9 +5,23 @@ Código-fonte de [blasther12.github.io](https://blasther12.github.io), que funci
 Hoje o portal publica:
 
 - **Blog / Portfólio**: [blasther12.github.io/blog/](https://blasther12.github.io/blog/), com projetos e textos sobre arquitetura de software, sistemas distribuídos, observabilidade, cloud, developer experience e IA.
-- **Cliofera**: [blasther12.github.io/cliofera/](https://blasther12.github.io/cliofera/), uma faculdade livre e autodirigida de História.
+- **Cliofera**: [blasther12.github.io/cliofera/](https://blasther12.github.io/cliofera/), formação autodirigida em História com currículo, fontes, historiografia, literatura, cronologia, debates e pesquisa.
+- **Alexandria**: [blasther12.github.io/alexandria/](https://blasther12.github.io/alexandria/), biblioteca temática de engenharia, sistemas, cloud, dados e IA com capítulos, laboratórios e trilhas de aprofundamento.
 
 A Home não possui esses espaços codificados diretamente no layout. O catálogo fica em `spaces.json`, portanto novos espaços podem ser adicionados sem reescrever `index.html`.
+
+## Manual global de conteúdo
+
+As regras editoriais e o passo a passo para adicionar conteúdo nos três espaços estão em [`CONTENT-GUIDE.md`](./CONTENT-GUIDE.md).
+
+O manual cobre:
+
+- como publicar um artigo;
+- como criar disciplina, aula, fonte e relação na Cliofera;
+- como criar tema, tópico, capítulo e laboratório no Alexandria;
+- status editorial (`draft`, `reviewed`, `verified`);
+- referências, imagens, mídia, revisão e CI;
+- como adicionar um novo espaço ao portal.
 
 ## Adicionar um novo espaço à Home
 
@@ -46,11 +60,13 @@ Use este cabeçalho:
 layout: post
 title: "Título do artigo"
 description: "Resumo curto para listagens e mecanismos de busca."
-date: 2026-08-21 09:00:00 -0300
+date: 2026-09-02 09:00:00 -0300
 tags:
   - arquitetura
   - engenharia
 reading_time: 5
+status: reviewed
+last_reviewed: 2026-09-02
 ---
 ```
 
@@ -71,6 +87,7 @@ Acesse `http://localhost:4000` para o portal e `http://localhost:4000/blog/` par
 
 - `index.html` — renderer do hub pessoal
 - `spaces.json` — catálogo dos espaços exibidos na Home
+- `CONTENT-GUIDE.md` — manual editorial global
 - `blog/index.html` — homepage do blog e portfólio
 - `_posts/` — artigos em Markdown
 - `_layouts/` — layouts do site e dos artigos
