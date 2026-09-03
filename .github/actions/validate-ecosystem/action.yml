@@ -1,0 +1,55 @@
+name: Validate ecosystem contract
+description: Validate the shared navigation, accessibility and metadata contract across Rafael Oliveira sites.
+inputs:
+  site-dir:
+    description: Root directory of the rendered site
+    required: true
+  entry:
+    description: Entry HTML path relative to site-dir
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Validate ecosystem contract
+      shell: bash
+      env:
+        SITE_DIR: ${{ inputs.site-dir }}
+        ENTRY: ${{ inputs.entry }}
+      run: |
+        set -euo pipefail
+        python - <<'PY'
+        from pathlib import Path
+        import os
+        import sys
+
+        root = Path(os.environ['SITE_DIR'])
+        entry = root / os.environ['ENTRY']
+        not_found = root / '404.html'
+
+        errors = []
+        if not entry.is_file():
+            errors.append(f'entry not found: {entry}')
+        if not not_found.is_file():
+            errors.append(f'404 page not found: {not_found}')
+
+        if entry.is_file():
+            html = entry.read_text(encoding='utf-8')
+            checks = {
+                'portal navigation': 'https://blasther12.github.io/' in html or 'href="/"' in html,
+                'portal label': 'Portal' in html,
+                'skip link': 'skip-link' in html,
+                'canonical metadata': 'rel="canonical"' in html,
+                'page description': 'name="description"' in html,
+            }
+            for label, ok in checks.items():
+                if not ok:
+                    errors.append(f'missing {label} in {entry}')
+
+        if errors:
+            print('Ecosystem contract failed:')
+            for error in errors:
+                print(f' - {error}')
+            sys.exit(1)
+
+        print(f'Ecosystem contract OK: {entry}')
+        PY

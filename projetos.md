@@ -35,18 +35,41 @@ permalink: /projetos/
       <article class="case-study">
         <div class="case-study__head">
           <div>
-            <span class="eyebrow">Estudos</span>
+            <span class="eyebrow">Estudos · Engenharia</span>
             <h2>Alexandria</h2>
-            <p class="case-study__summary">O Alexandria nasceu porque minhas referências de estudo estavam espalhadas demais. A ideia foi montar um lugar em que assuntos se conectam e existe uma ordem razoável para estudá-los.</p>
+            <p class="case-study__summary">A Alexandria nasceu porque minhas referências de estudo estavam espalhadas demais. A ideia foi montar um lugar em que assuntos se conectam e o estudo produz evidência, não apenas páginas marcadas como lidas.</p>
           </div>
-          <a class="button button--ghost" href="https://github.com/blasther12/alexandria">GitHub</a>
+          <div class="hero__actions">
+            <a class="button button--primary" href="https://blasther12.github.io/alexandria/">Explorar</a>
+            <a class="button button--ghost" href="https://github.com/blasther12/alexandria">GitHub</a>
+          </div>
         </div>
         <div class="case-study__details">
-          <div><strong>O problema</strong><p>Uma lista enorme de ferramentas não ajuda muito quando falta contexto sobre o que aprender primeiro e por quê.</p></div>
-          <div><strong>O caminho</strong><p>Organizei o material em trilhas, níveis, projetos e referências, conectando fundamentos a assuntos como arquitetura, cloud e IA.</p></div>
-          <div><strong>O preço</strong><p>Prefiro deixar alguns assuntos de fora a manter conteúdo raso só para acompanhar toda novidade que aparece.</p></div>
+          <div><strong>O problema</strong><p>Uma lista enorme de ferramentas não ajuda muito quando falta contexto sobre mecanismos, dependências e por que aprender determinado assunto.</p></div>
+          <div><strong>O caminho</strong><p>Organizei o acervo por temas conectados, com trade-offs, laboratórios, projetos, referências e mapas para navegar por problema.</p></div>
+          <div><strong>O preço</strong><p>Quanto maior a biblioteca, maior a necessidade de curadoria e de boas portas de entrada para não transformar profundidade em ruído.</p></div>
         </div>
         <div class="card__tags"><span>Open source</span><span>Architecture</span><span>Distributed Systems</span><span>Cloud</span><span>AI Engineering</span></div>
+      </article>
+
+      <article class="case-study">
+        <div class="case-study__head">
+          <div>
+            <span class="eyebrow">Estudos · História</span>
+            <h2>Cliofera</h2>
+            <p class="case-study__summary">Uma faculdade livre de História para estudar de forma sistemática, com currículo, cronologia, fontes, historiografia, literatura, debates e produção autoral.</p>
+          </div>
+          <div class="hero__actions">
+            <a class="button button--primary" href="https://blasther12.github.io/cliofera/">Estudar</a>
+            <a class="button button--ghost" href="https://github.com/blasther12/cliofera">GitHub</a>
+          </div>
+        </div>
+        <div class="case-study__details">
+          <div><strong>O problema</strong><p>Estudar História por curiosidades isoladas deixa lacunas cronológicas, regionais e metodológicas difíceis de perceber.</p></div>
+          <div><strong>O caminho</strong><p>Montei quatro anos de formação autodirigida, conectando aulas, bibliografia, fontes, grandes debates, cronologia e progresso local.</p></div>
+          <div><strong>O preço</strong><p>Uma formação ampla exige revisão constante para evitar eurocentrismo, simplificações e a falsa sensação de que cobertura extensa substitui leitura crítica.</p></div>
+        </div>
+        <div class="card__tags"><span>História</span><span>Historiografia</span><span>Fontes</span><span>PWA</span><span>Open source</span></div>
       </article>
     </div>
 

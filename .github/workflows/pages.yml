@@ -44,6 +44,9 @@ jobs:
           done
           python -m json.tool spaces.json > /dev/null
           python -m json.tool manifest.webmanifest > /dev/null
+          node --check assets/js/portal.js
+          test -s assets/css/portal.css
+          test -s assets/css/ecosystem.scss
 
       - name: Setup Pages
         id: pages
@@ -54,6 +57,12 @@ jobs:
         with:
           source: ./
           destination: ./_site
+
+      - name: Validate ecosystem contract
+        uses: ./.github/actions/validate-ecosystem
+        with:
+          site-dir: ./_site
+          entry: blog/index.html
 
       - name: Check internal links
         uses: lycheeverse/lychee-action@v2.8.0

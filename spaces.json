@@ -32,17 +32,6 @@
       "iconImage": "https://blasther12.github.io/alexandria/icons/alexandria-mark.svg",
       "accent": "green",
       "tags": ["Software", "Cloud", "IA", "Arquitetura"]
-    },
-    {
-      "id": "manual-conteudo",
-      "name": "Manual do Acervo",
-      "category": "Documentação",
-      "description": "Guia global para adicionar artigos, disciplinas, aulas, temas, capítulos, laboratórios, referências e novos espaços mantendo estrutura e qualidade editorial.",
-      "href": "https://github.com/blasther12/blasther12.github.io/blob/main/CONTENT-GUIDE.md",
-      "action": "Abrir manual",
-      "icon": "✦",
-      "accent": "purple",
-      "tags": ["Conteúdo", "Qualidade", "Contribuição"]
     }
   ]
 }

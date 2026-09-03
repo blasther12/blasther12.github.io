@@ -23,6 +23,25 @@ layout: default
     {{ content }}
   </div>
 
+  {% assign alexandria_links = '' %}
+  {% if page.tags contains 'observabilidade' or page.tags contains 'opentelemetry' or page.tags contains 'confiabilidade' %}
+    {% assign alexandria_links = alexandria_links | append: '<a href="https://blasther12.github.io/alexandria/#/theme/observabilidade">Observabilidade na Alexandria →</a>' %}
+  {% endif %}
+  {% if page.tags contains 'arquitetura' or page.tags contains 'sistemas-distribuidos' or page.tags contains 'trade-offs' %}
+    {% assign alexandria_links = alexandria_links | append: '<a href="https://blasther12.github.io/alexandria/#/theme/sistemas-distribuidos">Sistemas Distribuídos na Alexandria →</a>' %}
+  {% endif %}
+  {% if page.tags contains 'inteligencia-artificial' or page.tags contains 'carreira' or page.tags contains 'saude-mental' %}
+    {% assign alexandria_links = alexandria_links | append: '<a href="https://blasther12.github.io/alexandria/#/theme/ai-engineering">AI Engineering na Alexandria →</a>' %}
+  {% endif %}
+  {% if alexandria_links != '' %}
+    <aside class="study-bridge container container--narrow" aria-labelledby="aprofundar-alexandria">
+      <span class="eyebrow">Aprofundar</span>
+      <h2 id="aprofundar-alexandria">Do texto para o estudo</h2>
+      <p>O Blog é a camada de reflexão. Na Alexandria ficam os mecanismos, trade-offs, referências e exercícios relacionados.</p>
+      <div class="study-bridge__links">{{ alexandria_links }}</div>
+    </aside>
+  {% endif %}
+
   {% if site.related_posts.size > 0 %}
     <section class="post__related container container--narrow" aria-labelledby="continue-lendo">
       <header class="post__related-header">
