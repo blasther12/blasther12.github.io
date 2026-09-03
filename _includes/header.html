@@ -9,10 +9,20 @@
       <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
       <a href="{{ '/projetos/' | relative_url }}">Projetos</a>
       <a href="{{ '/artigos/' | relative_url }}">Artigos</a>
-      <a href="{{ '/' | relative_url }}">Portal</a>
     </nav>
 
     <div class="nav-actions">
+      <div class="ecosystem-nav" aria-label="Navegação entre espaços">
+        <a class="portal-home" href="{{ '/' | relative_url }}">⌂ Portal</a>
+        <details class="space-switcher">
+          <summary>Espaços</summary>
+          <div class="space-switcher__menu">
+            <a href="{{ '/blog/' | relative_url }}"><strong>Blog</strong><span>Textos, projetos e trajetória em engenharia.</span></a>
+            <a href="https://blasther12.github.io/cliofera/"><strong>Cliofera</strong><span>Formação autodirigida em História.</span></a>
+            <a href="https://blasther12.github.io/alexandria/"><strong>Alexandria</strong><span>Biblioteca de engenharia e tecnologia.</span></a>
+          </div>
+        </details>
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <button class="theme-toggle" type="button" aria-label="Alternar tema" title="Alternar tema">
         <span class="theme-toggle__sun" aria-hidden="true">☀</span>
